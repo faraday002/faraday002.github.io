@@ -1,0 +1,16 @@
+body{
+	background-color: black;
+	}
+h1{
+	color: white;
+	font-style : italic;
+	font-weight : bold;
+	text-decoration : wavy underline;
+	font-family : Lemon;
+}			
+
+p{
+	color: #259efe;
+	font-family: Lemon, sans-serif;
+	font-size : 30px
+		 }
