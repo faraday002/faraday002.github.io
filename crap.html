@@ -30,6 +30,22 @@
             <label for="age">
                 Input your age (years): <input type="number" min="13" max="120" inputmode="numeric" id="age">
             </label>
+            <script>
+                document.getElementById('age').oninput = function() {
+                // Clear any custom validation messages previously set
+                this.setCustomValidity('');
+            };
+
+            document.getElementById('age').oninvalid = function(event) {
+                if (this.value < 13) {
+                    // Set a custom message for values below the minimum
+                    this.setCustomValidity('Kids aren\'t allowed here!');
+                } else {
+                    // This ensures that other validity checks (like the field being required) still use the default message
+                    this.setCustomValidity('');
+                }
+            };
+</script>
         </fieldset>
         <label for="terms-and-conditions">
             <input type="checkbox" id="terms-and-conditions" required> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
